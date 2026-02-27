@@ -1,13 +1,13 @@
 ---
-title: Encrypted Post
-published: 2024-01-15
+title: 视觉板块第一篇文章
+published: 2026-02-27
 description: This is an article for testing the page encryption feature
-encrypted: true
+encrypted: false
 pinned: true
-password: "123456"
+
 alias: "encrypted-example"
 tags: ["Test", "Encryption"]
-category: "Technology"
+category: "视觉"
 ---
 
 This blog template is built with [Astro](https://astro.build/). For the things that are not mentioned in this guide, you may find the answers in the [Astro Docs](https://docs.astro.build/).
