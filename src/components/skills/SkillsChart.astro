@@ -296,15 +296,15 @@ const calculatePercentage = (value: number, total: number) => {
               <div class="flex items-center">
                 <span class="text-90 font-medium">{item.name}</span>
                 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-gray-600/20 dark:bg-gray-700 text-60">
-                  {item.value}
+                  {item.value > 0 ? item.value : '-'}
                 </span>
               </div>
-              <span class="text-70 font-medium">{actualPercentage}%</span>
+              <span class="text-70 font-medium">{item.value > 0 ? `${actualPercentage}%` : '%'}</span>
             </div>
             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
               <div 
                 class="h-3 rounded-full transition-all duration-300"
-                style={`width: ${percentage}%; background-color: ${item.color};`}
+                style={`width: ${item.value > 0 ? actualPercentage : 0}%; background-color: ${item.color};`}
               ></div>
             </div>
           </div>
