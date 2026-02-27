@@ -6,11 +6,11 @@ encrypted: false
 pinned: true
 
 alias: "encrypted-example"
-tags: ["Test", "Encryption"]
+tags: ["视觉", "K230"]
 category: "视觉"
 ---
 
-## Front-matter of Posts
+## 代码
 
 ```yaml
 这是视觉板块下的第一篇文章，仅仅用来测试功能
