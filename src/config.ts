@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 	title: "Mizuki",
 	subtitle: "One demo website",
 	siteURL: "https://blog.rebuffed.cloud/", // 请替换为你的站点URL，以斜杠结尾
-	siteStartDate: "2025-01-01", // 站点开始运行日期，用于站点统计组件计算运行天数
+	siteStartDate: "2026-02-27", // 站点开始运行日期，用于站点统计组件计算运行天数
 
 	timeZone: SITE_TIMEZONE,
 
@@ -160,7 +160,7 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "わたしの部屋", // 主页横幅主标题
+			title: "rebuffed blog", // 主页横幅主标题
 
 			subtitle: [
 				"特別なことはないけど、君がいると十分です",
