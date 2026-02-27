@@ -24,28 +24,28 @@ export const skillsData: Skill[] = [
 		name: "STM32",
 		description:
 			"STM32是意法半导体推出的一系列基于ARM Cortex-M内核的微控制器,广泛应用于嵌入式系统开发中。",
-		icon: "logos:stm32",
+		icon: "simple-icons:stmicroelectronics",
 		category: "embedded",
 		level: "beginner",
 		experience: { years: 0, months: 5 },
 		projects: ["system-design"
 
 		],
-		color: "#F7DF1E",
+		color: "#03234B",
 	},
 	{
 		id: "C/C++",
 		name: "C/C++",
 		description:
 			"C/C++ 是嵌入式系统开发中最常用的编程语言,具有高性能和对底层硬件的直接访问能力。",
-		icon: "logos:cplusplus",
+		icon: "logos:c-plusplus",
 		category: "Programming",
 		level: "beginner",
 		experience: { years: 0, months: 5 },
 		projects: ["system-design"
 
 		],
-		color: "#d1269e",
+		color: "#00599C",
 	},
 	{
 		id: "视觉",
