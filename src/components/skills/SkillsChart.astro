@@ -156,7 +156,7 @@ const levelSegments = levelData.map((item) => {
 });
 
 // 辅助函数：计算SVG路径
-const calculatePathData = (segment: { angle: number; startAngle: number; endAngle: number }) => {
+const getPathData = (segment: { angle: number; startAngle: number; endAngle: number }) => {
 	if (segment.angle === 0) return null;
 	
 	// 如果是100%（360度），画一个完整的圆
@@ -218,7 +218,7 @@ const calculatePercentage = (value: number, total: number) => {
                 </radialGradient>
               </defs>
               {levelSegments.map((segment, index) => {
-                const pathData = calculatePathData(segment);
+                const pathData = getPathData(segment);
                 if (!pathData) return null;
                 
                 // 根据技能等级选择对应的渐变
