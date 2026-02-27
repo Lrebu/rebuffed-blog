@@ -368,7 +368,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Bilibili",
 			icon: "fa7-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
+			url: "https://space.bilibili.com/1235271218?spm_id_from=333.1007.0.0",
 		},
 		{
 			name: "Gitee",
@@ -378,7 +378,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
-			url: "https://github.com/matsuzaka-yuki",
+			url: "https://github.com/Lrebu",
 		},
 		{
 			name: "Codeberg",
