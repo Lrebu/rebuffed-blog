@@ -220,9 +220,9 @@ export const ja: Translation = {
 	// スキルページ
 	[Key.skills]: "スキル",
 	[Key.skillsSubtitle]: "技術スキルと専門知識",
-	[Key.skillsFrontend]: "フロントエンド開発",
-	[Key.skillsBackend]: "バックエンド開発",
-	[Key.skillsDatabase]: "データベース",
+	[Key.skillsEmbedded]: "組み込み開発",
+	[Key.skillsSystem]: "システム開発",
+	[Key.skillsVision]: "マシンビジョン",
 	[Key.skillsTools]: "開発ツール",
 	[Key.skillsOther]: "その他のスキル",
 	[Key.skillLevel]: "熟練度",

@@ -6,7 +6,7 @@ export interface Skill {
 	name: string;
 	description: string;
 	icon: string; // Iconify icon name
-	category: "embedded" | "system" | "database" | "tools" | "other";
+	category: "embedded" | "Programming" | "视觉" | "tools" | "other";
 	level: "beginner" | "intermediate" | "advanced" | "expert";
 	experience: {
 		years: number;
@@ -33,7 +33,34 @@ export const skillsData: Skill[] = [
 		],
 		color: "#F7DF1E",
 	},
+	{
+		id: "C/C++",
+		name: "C/C++",
+		description:
+			"C/C++ 是嵌入式系统开发中最常用的编程语言,具有高性能和对底层硬件的直接访问能力。",
+		icon: "logos:cplusplus",
+		category: "Programming",
+		level: "beginner",
+		experience: { years: 0, months: 5 },
+		projects: ["system-design"
 
+		],
+		color: "#d1269e",
+	},
+	{
+		id: "视觉",
+		name: "视觉",
+		description:
+			"视觉处理和图像识别技术，用于嵌入式系统中的图像分析和处理。",
+		icon: "logos:opencv",
+		category: "视觉",
+		level: "beginner",
+		experience: { years: 0, months: 1 },
+		projects: ["system-design"
+
+		],
+		color: "#0f9069",
+	},
 	// Other Skills
 	
 	{
@@ -61,9 +88,9 @@ export const getSkillStats = () => {
 		expert: skillsData.filter((s) => s.level === "expert").length,
 	};
 	const byCategory = {
-		frontend: skillsData.filter((s) => s.category === "embedded").length,
-		backend: skillsData.filter((s) => s.category === "system").length,
-		database: skillsData.filter((s) => s.category === "database").length,
+		embedded: skillsData.filter((s) => s.category === "embedded").length,
+		Programming: skillsData.filter((s) => s.category === "Programming").length,
+		视觉: skillsData.filter((s) => s.category === "视觉").length,
 		tools: skillsData.filter((s) => s.category === "tools").length,
 		other: skillsData.filter((s) => s.category === "other").length,
 	};
