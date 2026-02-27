@@ -159,9 +159,9 @@ enum I18nKey {
 	// Skills page
 	skills = "skills",
 	skillsSubtitle = "skillsSubtitle",
-	skillsFrontend = "skillsFrontend",
-	skillsBackend = "skillsBackend",
-	skillsDatabase = "skillsDatabase",
+	skillsEmbedded = "skillsEmbedded",
+	skillsSystem = "skillsSystem",
+	skillsVision = "skillsVision",
 	skillsTools = "skillsTools",
 	skillsOther = "skillsOther",
 	skillLevel = "skillLevel",

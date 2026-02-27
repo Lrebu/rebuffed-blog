@@ -56,9 +56,9 @@ interface Props {
 			expert: number;
 		};
 		byCategory: {
-			frontend: number;
-			backend: number;
-			database: number;
+			embedded: number;
+			system: number;
+			视觉: number;
 			tools: number;
 			other: number;
 		};
@@ -80,9 +80,9 @@ const levelColors = {
 };
 
 const categoryColors = {
-	frontend: "#3B82F6", // blue-500
-	backend: "#8B5CF6", // violet-500
-	database: "#10B981", // emerald-500
+	embedded: "#3B82F6", // blue-500
+	system: "#8B5CF6", // violet-500
+	视觉: "#10B981", // emerald-500
 	tools: "#F59E0B", // amber-500
 	other: "#EC4899", // pink-500
 };
@@ -114,19 +114,19 @@ const levelData = [
 // 计算矩形图数据（按技能分类）
 const categoryData = [
 	{
-		name: i18n(I18nKey.skillsFrontend),
-		value: stats.byCategory.frontend,
-		color: categoryColors.frontend,
+		name: i18n(I18nKey.skillsEmbedded),
+		value: stats.byCategory.embedded,
+		color: categoryColors.embedded,
 	},
 	{
-		name: i18n(I18nKey.skillsBackend),
-		value: stats.byCategory.backend,
-		color: categoryColors.backend,
+		name: i18n(I18nKey.skillsSystem),
+		value: stats.byCategory.system,
+		color: categoryColors.system,
 	},
 	{
-		name: i18n(I18nKey.skillsDatabase),
-		value: stats.byCategory.database,
-		color: categoryColors.database,
+		name: i18n(I18nKey.skillsVision),
+		value: stats.byCategory.视觉,
+		color: categoryColors.视觉,
 	},
 	{
 		name: i18n(I18nKey.skillsTools),

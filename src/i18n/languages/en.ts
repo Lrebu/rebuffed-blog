@@ -218,9 +218,9 @@ export const en: Translation = {
 	// Skills Page
 	[Key.skills]: "Skills",
 	[Key.skillsSubtitle]: "My technical skills and expertise",
-	[Key.skillsFrontend]: "Frontend Development",
-	[Key.skillsBackend]: "Backend Development",
-	[Key.skillsDatabase]: "Database",
+	[Key.skillsEmbedded]: "Embedded Development",
+	[Key.skillsSystem]: "System Development",
+	[Key.skillsVision]: "Machine Vision",
 	[Key.skillsTools]: "Development Tools",
 	[Key.skillsOther]: "Other Skills",
 	[Key.skillLevel]: "Proficiency",
