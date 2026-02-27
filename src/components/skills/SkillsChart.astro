@@ -155,6 +155,28 @@ const levelSegments = levelData.map((item) => {
 	};
 });
 
+// 辅助函数：计算SVG路径
+const calculatePathData = (segment: any) => {
+	if (segment.angle === 0) return null;
+	
+	// 如果是100%（360度），画一个完整的圆
+	if (segment.angle === 360) {
+		return `M 50,50 m -50,0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0`;
+	}
+
+	const startRad = (segment.startAngle - 90) * (Math.PI / 180);
+	const endRad = (segment.endAngle - 90) * (Math.PI / 180);
+
+	const x1 = 50 + 50 * Math.cos(startRad);
+	const y1 = 50 + 50 * Math.sin(startRad);
+	const x2 = 50 + 50 * Math.cos(endRad);
+	const y2 = 50 + 50 * Math.sin(endRad);
+
+	const largeArcFlag = segment.angle > 180 ? 1 : 0;
+
+	return `M 50 50 L ${x1} ${y1} A 50 50 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+};
+
 // 计算矩形图最大值用于比例计算
 const maxCategory = Math.max(...categoryData.map((item) => item.value), 1);
 
