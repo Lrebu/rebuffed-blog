@@ -5,7 +5,7 @@ description: "分享一下基于k230的视觉方案"
 encrypted: false
 pinned: true
 
-alias: "Electronic-control-test"
+alias: "25e-k230-vision"
 tags: ["视觉","K230"]
 category: "视觉"
 ---
