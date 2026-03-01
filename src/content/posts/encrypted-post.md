@@ -6,7 +6,7 @@ encrypted: false
 pinned: true
 
 alias: "encrypted-example"
-tags: ["视觉", "K230"]
+tags: ["视觉"]
 category: "视觉"
 ---
 
