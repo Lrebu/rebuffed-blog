@@ -72,4 +72,6 @@ RECT_AREA_MIN   = 800      # 最小面积（最短边 × 最长边）
 | `RECT_ASPECT_MIN`   | 防止长条形四边形                                                                                                                                                                            |
 | `RECT_SIDE_RATIO`      | 要求对边近似等长                                                                                                                                                   |
 | `RECT_ANGLE_TOL`    | 每个内角与 90° 的偏差不超过 25°                                                                                                                          |
-| `RECT_DIAG_RATIO` | 	矩形对角线应近似等长                                                                                                                                                   |                                                                      
+| `RECT_DIAG_RATIO` | 	矩形对角线应近似等长                                                                                                                                                   |                                     
+
+6.                               
