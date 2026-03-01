@@ -24,13 +24,13 @@ category: "视觉"
 参数这一块先不太深入讲东西，主要目的是让大家有个印象。
 
 ### 1.分辨率参数
-```c
+```py
 IMG_W, IMG_H = 320, 240        # 图像分辨率
 IDE_w, IDE_h = 800, 480        # IDE窗口分辨率
 ```
 
 ### 2.画面中心参数
-```c
+```py
 IMG_CX, IMG_CY = IMG_W // 2, IMG_H // 2   # 画面中心坐标 (160, 120)
 ```
 
@@ -38,7 +38,7 @@ IMG_CX, IMG_CY = IMG_W // 2, IMG_H // 2   # 画面中心坐标 (160, 120)
 
 设置发送时间间隔为30ms（为了和云台主控上串口接收的频率一致，如有其他要求，请自行修改）
 
-```c
+```py
 SEND_INTERVAL_MS = 30           # 串口发送最小间隔（毫秒）
 last_send_time = ticks_ms()     # 上次发送的时间戳
 ```
@@ -47,7 +47,7 @@ last_send_time = ticks_ms()     # 上次发送的时间戳
 
 这些参数大家先有个印象即可，后面会着重讲，尽量给大家讲明白。
 
-```c
+```py
 canny_thresh1      = 50         # Canny 低阈值
 canny_thresh2      = 150        # Canny 高阈值
 approx_epsilon     = 0.04       # 轮廓逼近精度（周长的比例系数）
@@ -57,7 +57,7 @@ gaussian_blur_size = 5          # 高斯模糊核大小（5×5）
 ```
 
 ### 5.矩形验证阈值
-```c
+```py
 RECT_MIN_SIDE   = 20       # 最短边最小像素长度
 RECT_ASPECT_MIN = 0.45     # 最短边与最长边之比的下限
 RECT_SIDE_RATIO = 0.3      # 对边长度差异容忍比例
@@ -81,7 +81,7 @@ RECT_AREA_MIN   = 800      # 最小面积（最短边 × 最长边）
 这个函数作用是根据接收到的4个角点坐标，来验证四个角点链接形成的四边形是否为矩形。
 
 #### 1.计算边向量和边长
-```c
+```py
 for i in range(4):
     dx = corners[(i+1)%4][0] - corners[i][0]
     dy = corners[(i+1)%4][1] - corners[i][1]
@@ -90,13 +90,13 @@ for i in range(4):
 ```
 在接收到4个角点坐标后，计算出四边形四条边的方向向量的坐标
 
-```c
+```py
 dx = corners[(i+1)%4][0] - corners[i][0]
 dy = corners[(i+1)%4][1] - corners[i][1]
 ```
 其中orners是角点列表，vectors是边向量列表，sides是存储边长的列表
 
-```c
+```py
 corners = [(x0, y0), (x1, y1), (x2, y2), (x3, y3)] # 索引:分别是0，1，2，3，4
 vectors和sides同理
 ```
@@ -104,28 +104,28 @@ vectors和sides同理
 这一步的目的是通过多重限制，筛选掉不符合要求的矩形
 
 1.最短边长度
-```c
+```py
 if min_s < RECT_MIN_SIDE:
     return False, 0
 ```
 这一步的目的是筛选掉太小的矩形。
 
 2.最小面积
-```c
+```py
 if max_s * min_s < RECT_AREA_MIN:
     return False, 0
 ```
 这一步的目的也是筛选掉太小的矩形，但是第一步是从边长长度来筛选，第二步是从面积大小来筛选。
 
 3.宽高比
-```c
+```py
 if min_s / max_s < RECT_ASPECT_MIN:
     return False, 0
 ```
 这一步目的是筛选掉太细长的矩形，短边/长边 ≥ 0.45，至于为什么不是短边/长边=1，因为在透视下四边形可能是梯形等，所以要留够误差。
 
 4.对边等长
-```c
+```py
 if abs(sides[0] - sides[2]) / max_s > RECT_SIDE_RATIO:
     return False, 0
 if abs(sides[1] - sides[3]) / max_s > RECT_SIDE_RATIO:
@@ -134,7 +134,7 @@ if abs(sides[1] - sides[3]) / max_s > RECT_SIDE_RATIO:
 这一步目的是限制四边形对边大致相等，同时留够误差，原因和上一步一样
 
 #### 3.内角验证
-```c
+```py
 dot = -(v1[0] * v2[0] + v1[1] * v2[1])
 cos_a = dot / (m1 * m2)
 angle = math.degrees(math.acos(cos_a))
@@ -144,14 +144,14 @@ angle = math.degrees(math.acos(cos_a))
 然后，判断∣90°−α∣≤25°，是为了限制65°≤α≤115°，在保证基本矩形形状的前提下，允许合理的透视变形。
 
 #### 4.对角线等长验证
-```c
+```py
 d1 = sqrt((corners[2][0] - corners[0][0])**2 + (corners[2][1] - corners[0][1])**2)
 d2 = sqrt((corners[3][0] - corners[1][0])**2 + (corners[3][1] - corners[1][1])**2)
 ```
 因为矩形的对角线等长，所以检测到的四边形的对角线也应该大致等长。
 
 #### 5.评分函数
-```c
+```py
 score = max(0, 100 - angle_dev_sum * 4) * 0.5 + \
         (min(sides[0], sides[2]) / max(sides[0], sides[2]) + \
          min(sides[1], sides[3]) / max(sides[1], sides[3])) * 25
@@ -179,7 +179,7 @@ s1=100, s3=90 → 90/100=0.9
 ```
 
 ### 透视校正中心
-```c
+```py
 def perspective_center(corners):
     """计算四边形两条对角线的交点，即透视下的真实矩形中心"""
     x1, y1 = corners[0]
@@ -204,7 +204,7 @@ def perspective_center(corners):
 这一部分代码主要有三个功能，分别是防坐标抖动，丢帧，误检跳变。
 
 #### 创建变量
-```c
+```py
 def __init__(self, alpha=0.85, max_miss=8):
     self.alpha = alpha          # EMA 平滑系数
     self.max_miss = max_miss    # 允许连续丢帧的最大帧数
@@ -224,7 +224,7 @@ def __init__(self, alpha=0.85, max_miss=8):
 | `velocity` | 	目标运动速度                                                                                                                                                   |    
 
 #### 角点排序
-```c
+```py
 def _sort_corners(self, corners):
         """排序为 [左上, 右上, 右下, 左下]"""
         cx = sum(c[0] for c in corners) / 4
