@@ -36,6 +36,7 @@ IMG_CX, IMG_CY = IMG_W // 2, IMG_H // 2   # 画面中心坐标 (160, 120)
 
 3.串口通信参数
 设置发送时间间隔为30ms（为了和云台主控上串口接收的频率一致，如有其他要求，请自行修改）
+
 ```yaml
 SEND_INTERVAL_MS = 30           # 串口发送最小间隔（毫秒）
 last_send_time = ticks_ms()     # 上次发送的时间戳
@@ -43,6 +44,7 @@ last_send_time = ticks_ms()     # 上次发送的时间戳
 
 4.Canny边缘检测与轮廓逼近参数
 这些参数大家先有个印象即可，后面回着重讲，尽量给大家讲明白。
+
 ```yaml
 canny_thresh1      = 50         # Canny 低阈值
 canny_thresh2      = 150        # Canny 高阈值
