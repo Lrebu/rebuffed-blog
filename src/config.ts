@@ -324,11 +324,11 @@ export const navBarConfig: NavBarConfig = {
 					url: "/about/",
 					icon: "material-symbols:person",
 				},
-				{
-					name: "Friends",
-					url: "/friends/",
-					icon: "material-symbols:group",
-				},
+				// {
+				// 	name: "Friends",
+				// 	url: "/friends/",
+				// 	icon: "material-symbols:group",
+				// },
 			],
 		},
 		{
@@ -346,11 +346,11 @@ export const navBarConfig: NavBarConfig = {
 					url: "/skills/",
 					icon: "material-symbols:psychology",
 				},
-				{
-					name: "Timeline",
-					url: "/timeline/",
-					icon: "material-symbols:timeline",
-				},
+				// {
+				// 	name: "Timeline",
+				// 	url: "/timeline/",
+				// 	icon: "material-symbols:timeline",
+				// },
 			],
 		},
 	],
