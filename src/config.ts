@@ -38,14 +38,14 @@ export const siteConfig: SiteConfig = {
 
 	// 特色页面开关配置（关闭未使用的页面有助于提升 SEO，关闭后请记得在 navbarConfig 中移除对应链接）
 	featurePages: {
-		anime: true, // 番剧页面开关
-		diary: true, // 日记页面开关
-		friends: true, // 友链页面开关
-		projects: true, // 项目页面开关
-		skills: true, // 技能页面开关
-		timeline: true, // 时间线页面开关
-		albums: true, // 相册页面开关
-		devices: true, // 设备页面开关
+		anime: false, // 番剧页面开关
+		diary: false, // 日记页面开关
+		friends: false, // 友链页面开关
+		projects: false, // 项目页面开关
+		skills: false, // 技能页面开关
+		timeline: false, // 时间线页面开关
+		albums: false, // 相册页面开关
+		devices: false, // 设备页面开关
 	},
 
 	// 顶栏标题配置
