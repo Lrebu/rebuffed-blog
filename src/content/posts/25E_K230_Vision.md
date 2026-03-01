@@ -204,7 +204,7 @@ def perspective_center(corners):
 这一部分代码主要有三个功能，分别是防坐标抖动，丢帧，误检跳变。
 
 #### 创建变量
-```yaml
+```c
 def __init__(self, alpha=0.85, max_miss=8):
     self.alpha = alpha          # EMA 平滑系数
     self.max_miss = max_miss    # 允许连续丢帧的最大帧数
@@ -224,7 +224,7 @@ def __init__(self, alpha=0.85, max_miss=8):
 | `velocity` | 	目标运动速度                                                                                                                                                   |    
 
 #### 角点排序
-```yaml
+```c
 def _sort_corners(self, corners):
         """排序为 [左上, 右上, 右下, 左下]"""
         cx = sum(c[0] for c in corners) / 4
