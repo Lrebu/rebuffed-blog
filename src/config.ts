@@ -278,40 +278,40 @@ export const navBarConfig: NavBarConfig = {
 					external: true,
 					icon: "fa7-brands:bilibili",
 				},
-				{
+/* 				{
 					name: "Gitee",
 					url: "https://gitee.com/matsuzakayuki/Mizuki",
 					external: true,
 					icon: "mdi:git",
-				},
+				}, */
 			],
 		},
 		{
 			name: "My",
 			url: "/content/",
 			icon: "material-symbols:person",
-			children: [
-				{
-					name: "Anime",
-					url: "/anime/",
-					icon: "material-symbols:movie",
-				},
-				{
-					name: "Diary",
-					url: "/diary/",
-					icon: "material-symbols:book",
-				},
-				{
-					name: "Gallery",
-					url: "/albums/",
-					icon: "material-symbols:photo-library",
-				},
-				{
-					name: "Devices",
-					url: "devices/",
-					icon: "material-symbols:devices",
-					external: false,
-				},
+		    children: [
+				// {
+				// 	name: "Anime",
+				// 	url: "/anime/",
+				// 	icon: "material-symbols:movie",
+				// },
+				// {
+				// 	name: "Diary",
+				// 	url: "/diary/",
+				// 	icon: "material-symbols:book",
+				// },
+				// {
+				// 	name: "Gallery",
+				// 	url: "/albums/",
+				// 	icon: "material-symbols:photo-library",
+				// },
+				// {
+				// 	name: "Devices",
+				// 	url: "devices/",
+				// 	icon: "material-symbols:devices",
+				// 	external: false,
+				// },
 			],
 		},
 		{
@@ -336,11 +336,11 @@ export const navBarConfig: NavBarConfig = {
 			url: "#",
 			icon: "material-symbols:more-horiz",
 			children: [
-				{
+/* 				{
 					name: "Projects",
 					url: "/projects/",
 					icon: "material-symbols:work",
-				},
+				}, */
 				{
 					name: "Skills",
 					url: "/skills/",
@@ -370,17 +370,17 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa7-brands:bilibili",
 			url: "https://space.bilibili.com/1235271218?spm_id_from=333.1007.0.0",
 		},
-		{
+/* 		{
 			name: "Gitee",
 			icon: "mdi:git",
 			url: "https://gitee.com/matsuzakayuki",
-		},
+		}, */
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
 			url: "https://github.com/Lrebu",
 		},
-		{
+/* 		{
 			name: "Codeberg",
 			icon: "simple-icons:codeberg",
 			url: "https://codeberg.org",
@@ -389,7 +389,7 @@ export const profileConfig: ProfileConfig = {
 			name: "Discord",
 			icon: "fa7-brands:discord",
 			url: "https://discord.gg/MqW6TcQtVM",
-		},
+		}, */
 	],
 };
 
