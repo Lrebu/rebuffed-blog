@@ -18,4 +18,4 @@ demo
 print("Hello Mizuki")
 ```
 
-![文章图片 w-90%](D:/rebuffed_bolg/rebuffed-blog/src/content/posts/guide/cover.jpg.png)
+![文章图片 w-90%](./guide/cover.jpg.png)
